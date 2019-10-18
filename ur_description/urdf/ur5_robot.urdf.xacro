@@ -10,10 +10,16 @@
   <!-- ur5 -->
   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
 
+  <!-- rg2 -->
+  <xacro:include filename="$(find robotao_rg2_driver)/urdf/rg2.urdf.xacro" />
+
   <!-- arm -->
   <xacro:ur5_robot prefix="" joint_limited="false"
     transmission_hw_interface="$(arg transmission_hw_interface)"
   />
+
+  <!-- gripper -->
+  <xacro:rg2 prefix="" connected_to="tool0"/>
 
   <link name="world" />
 
